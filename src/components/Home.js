@@ -9,7 +9,9 @@ export default function Home() {
         <Link to="/register" className="btn m-2 btn-primary">
           Register
         </Link>
-        <Link className="btn m-2 btn-secondary">Login</Link>
+        <Link to="/login" className="btn m-2 btn-secondary">
+          Login
+        </Link>
       </div>
     </>
   );
