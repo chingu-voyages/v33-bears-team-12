@@ -10,6 +10,7 @@ export default function Dashboard() {
   const url = process.env.REACT_APP_API_BASE_URL;
   const [user, setUser] = useState(null);
   const username = localStorage.getItem("username");
+  if (!username) history.push("/");
   const [listLinks, setListLinks] = useState(
     <li className="list-group-item"></li>
   );
@@ -29,7 +30,7 @@ export default function Dashboard() {
           const res = await axios.get(`${url}/user/username/${username}`);
           await setUser(() => res.data);
         } catch (err) {
-          // history.push("/");
+          history.push("/");
           console.log(err);
         }
       }
