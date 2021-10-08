@@ -2,28 +2,25 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
-export default function Register() {
+export default function Login() {
   const history = useHistory();
   const url = process.env.REACT_APP_API_BASE_URL;
-  const [name, setName] = useState("");
-  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [repeat_password, setRepeatPassword] = useState("");
-  const [regeistrationError, setRegistrationError] = useState(null);
+  const [loginError, setLoginError] = useState(null);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const newUser = { name, username, email, password, repeat_password };
+    const loginUser = { email, password };
     try {
-      const res = await axios.post(`${url}/user/register`, newUser);
+      const res = await axios.post(`${url}/user/login`, loginUser);
       console.log(res.data.accessToken);
       localStorage.setItem("accessToken", res.data.accessToken);
       localStorage.setItem("refreshToken", res.data.refreshToken);
       localStorage.setItem("username", res.data.username);
       history.push(`/dashboard`);
     } catch (err) {
-      setRegistrationError(err.response.data.error);
+      setLoginError(err.response.data.error);
       console.log(err.response.data.error);
     }
   };
@@ -32,36 +29,12 @@ export default function Register() {
     <>
       <div className="container text-center">
         <h1>Welcome</h1>
-        {regeistrationError && (
+        {loginError && (
           <div className="alert border border-danger alert-danger my-2">
-            Error: {regeistrationError}
+            Error: {loginError}
           </div>
         )}
         <form style={{ maxWidth: "18rem" }} onSubmit={handleSubmit}>
-          {/* // */}
-          <div className="input-group mb-3">
-            <span className="input-group-text">name</span>
-            <input
-              onChange={(event) => {
-                setName(event.target.value);
-              }}
-              type="text"
-              className="form-control"
-              aria-label="name"
-            />
-          </div>
-          {/* // */}
-          <div className="input-group mb-3">
-            <span className="input-group-text">username</span>
-            <input
-              onChange={(event) => {
-                setUsername(event.target.value);
-              }}
-              type="text"
-              className="form-control"
-              aria-label="username"
-            />
-          </div>
           {/* // */}
           <div className="input-group mb-3">
             <span className="input-group-text">email</span>
@@ -84,18 +57,6 @@ export default function Register() {
               type="password"
               className="form-control"
               aria-label="password"
-            />
-          </div>
-          {/* // */}
-          <div className="input-group mb-3">
-            <span className="input-group-text">repeat password</span>
-            <input
-              onChange={(event) => {
-                setRepeatPassword(event.target.value);
-              }}
-              type="password"
-              className="form-control"
-              aria-label="repeat password"
             />
           </div>
           {/* // */}
