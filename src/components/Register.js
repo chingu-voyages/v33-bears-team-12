@@ -42,7 +42,6 @@ export default function Register() {
             </div>
           )}
           <form className="row p-3" onSubmit={handleSubmit}>
-            {/* // */}
             <div className="input-group mb-3">
               <span className="input-group-text" id="basic-addon1">
                 name
@@ -56,7 +55,6 @@ export default function Register() {
                 aria-label="name"
               />
             </div>
-            {/* // */}
             <div className="input-group mb-3">
               <span className="input-group-text">username</span>
               <input
@@ -68,7 +66,6 @@ export default function Register() {
                 aria-label="username"
               />
             </div>
-            {/* // */}
             <div className="input-group mb-3">
               <span className="input-group-text">email</span>
               <input
@@ -80,7 +77,6 @@ export default function Register() {
                 aria-label="email"
               />
             </div>
-            {/* // */}
             <div className="input-group mb-3">
               <span className="input-group-text">password</span>
               <input
@@ -92,7 +88,6 @@ export default function Register() {
                 aria-label="password"
               />
             </div>
-            {/* // */}
             <div className="input-group mb-3">
               <span className="input-group-text">repeat password</span>
               <input
@@ -104,7 +99,6 @@ export default function Register() {
                 aria-label="repeat password"
               />
             </div>
-            {/* // */}
             <button className="btn btn-primary" type="submit">
               Submit
             </button>

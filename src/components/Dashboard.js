@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 
@@ -134,9 +134,15 @@ export default function Dashboard() {
         >
           <div className="card-body">
             <h1 className="card-title ">{`Welcome ${user.name}`}</h1>
-            <button className="btn btn-secondary btn-sm" onClick={logout}>
+            <button className="btn btn-secondary btn-sm mx-1" onClick={logout}>
               Log Out
             </button>
+            <Link
+              to={`/${user.username}`}
+              className="btn btn-success btn-sm mx-1"
+            >
+              Public Profile
+            </Link>
             <p className="card-text"></p>
             <ul className="list-group">{listLinks}</ul>
 
