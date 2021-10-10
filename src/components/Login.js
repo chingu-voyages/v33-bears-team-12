@@ -27,43 +27,50 @@ export default function Login() {
 
   return (
     <>
-      <div className="container text-center">
-        <h1>Welcome</h1>
-        {loginError && (
-          <div className="alert border border-danger alert-danger my-2">
-            Error: {loginError}
-          </div>
-        )}
-        <form style={{ maxWidth: "18rem" }} onSubmit={handleSubmit}>
-          {/* // */}
-          <div className="input-group mb-3">
-            <span className="input-group-text">email</span>
-            <input
-              onChange={(event) => {
-                setEmail(event.target.value);
-              }}
-              type="text"
-              className="form-control"
-              aria-label="email"
-            />
-          </div>
-          {/* // */}
-          <div className="input-group mb-3">
-            <span className="input-group-text">password</span>
-            <input
-              onChange={(event) => {
-                setPassword(event.target.value);
-              }}
-              type="password"
-              className="form-control"
-              aria-label="password"
-            />
-          </div>
-          {/* // */}
-          <button className="btn btn-primary" type="submit">
-            Submit
-          </button>
-        </form>
+      <div
+        className="container text-center card mt-5"
+        style={{ maxWidth: "40rem" }}
+      >
+        <div className="card-body">
+          <h1 className="card-title ">Login</h1>
+          {loginError && (
+            <div className="alert border border-danger alert-danger my-2">
+              Error: {loginError}
+            </div>
+          )}
+          <form className="row p-4" onSubmit={handleSubmit}>
+            {/* // */}
+            <div className="input-group col col-12 col-md my-1">
+              <span className="input-group-text">email</span>
+              <input
+                onChange={(event) => {
+                  setEmail(event.target.value);
+                }}
+                type="text"
+                className="form-control"
+                aria-label="email"
+              />
+            </div>
+            {/* // */}
+            <div className="input-group col col-12 col-md my-1">
+              <span className="input-group-text">password</span>
+              <input
+                onChange={(event) => {
+                  setPassword(event.target.value);
+                }}
+                type="password"
+                className="form-control"
+                aria-label="password"
+              />
+            </div>
+            {/* // */}
+            <div className="align-self-center my-1 mx-3">
+              <button className="btn btn-primary btn-sm" type="submit">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </>
   );

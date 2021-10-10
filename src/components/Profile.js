@@ -22,13 +22,14 @@ export default function Profile({ user }) {
 
   return (
     <>
-      <div className="">
-        <div className="container text-center">
-          <div className="card-body">
-            <h1 className="card-title ">{user.name}</h1>
-            <p className="card-text"></p>
-            <ul className="list-group">{listLinks}</ul>
-          </div>
+      <div
+        className="container text-center card mt-5"
+        style={{ maxWidth: "40rem" }}
+      >
+        <div className="card-body">
+          <h1 className="card-title ">{user.name}</h1>
+          <p className="card-text"></p>
+          <ul className="list-group">{listLinks}</ul>
         </div>
       </div>
     </>

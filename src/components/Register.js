@@ -30,79 +30,86 @@ export default function Register() {
 
   return (
     <>
-      <div className="container text-center">
-        <h1>Welcome</h1>
-        {regeistrationError && (
-          <div className="alert border border-danger alert-danger my-2">
-            Error: {regeistrationError}
-          </div>
-        )}
-        <form style={{ maxWidth: "18rem" }} onSubmit={handleSubmit}>
-          {/* // */}
-          <div className="input-group mb-3">
-            <span className="input-group-text">name</span>
-            <input
-              onChange={(event) => {
-                setName(event.target.value);
-              }}
-              type="text"
-              className="form-control"
-              aria-label="name"
-            />
-          </div>
-          {/* // */}
-          <div className="input-group mb-3">
-            <span className="input-group-text">username</span>
-            <input
-              onChange={(event) => {
-                setUsername(event.target.value);
-              }}
-              type="text"
-              className="form-control"
-              aria-label="username"
-            />
-          </div>
-          {/* // */}
-          <div className="input-group mb-3">
-            <span className="input-group-text">email</span>
-            <input
-              onChange={(event) => {
-                setEmail(event.target.value);
-              }}
-              type="text"
-              className="form-control"
-              aria-label="email"
-            />
-          </div>
-          {/* // */}
-          <div className="input-group mb-3">
-            <span className="input-group-text">password</span>
-            <input
-              onChange={(event) => {
-                setPassword(event.target.value);
-              }}
-              type="password"
-              className="form-control"
-              aria-label="password"
-            />
-          </div>
-          {/* // */}
-          <div className="input-group mb-3">
-            <span className="input-group-text">repeat password</span>
-            <input
-              onChange={(event) => {
-                setRepeatPassword(event.target.value);
-              }}
-              type="password"
-              className="form-control"
-              aria-label="repeat password"
-            />
-          </div>
-          {/* // */}
-          <button className="btn btn-primary" type="submit">
-            Submit
-          </button>
-        </form>
+      <div
+        className="container text-center card mt-5"
+        style={{ maxWidth: "30rem" }}
+      >
+        <div className="card-body">
+          <h1 className="card-title ">Sign Up</h1>
+          {regeistrationError && (
+            <div className="alert border border-danger alert-danger my-2">
+              Error: {regeistrationError}
+            </div>
+          )}
+          <form className="row p-3" onSubmit={handleSubmit}>
+            {/* // */}
+            <div className="input-group mb-3">
+              <span className="input-group-text" id="basic-addon1">
+                name
+              </span>
+              <input
+                onChange={(event) => {
+                  setName(event.target.value);
+                }}
+                type="text"
+                className="form-control"
+                aria-label="name"
+              />
+            </div>
+            {/* // */}
+            <div className="input-group mb-3">
+              <span className="input-group-text">username</span>
+              <input
+                onChange={(event) => {
+                  setUsername(event.target.value);
+                }}
+                type="text"
+                className="form-control"
+                aria-label="username"
+              />
+            </div>
+            {/* // */}
+            <div className="input-group mb-3">
+              <span className="input-group-text">email</span>
+              <input
+                onChange={(event) => {
+                  setEmail(event.target.value);
+                }}
+                type="text"
+                className="form-control"
+                aria-label="email"
+              />
+            </div>
+            {/* // */}
+            <div className="input-group mb-3">
+              <span className="input-group-text">password</span>
+              <input
+                onChange={(event) => {
+                  setPassword(event.target.value);
+                }}
+                type="password"
+                className="form-control"
+                aria-label="password"
+              />
+            </div>
+            {/* // */}
+            <div className="input-group mb-3">
+              <span className="input-group-text">repeat password</span>
+              <input
+                onChange={(event) => {
+                  setRepeatPassword(event.target.value);
+                }}
+                type="password"
+                className="form-control"
+                aria-label="repeat password"
+              />
+            </div>
+            {/* // */}
+            <button className="btn btn-primary" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
     </>
   );

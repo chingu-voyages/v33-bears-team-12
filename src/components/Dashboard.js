@@ -128,23 +128,25 @@ export default function Dashboard() {
   return (
     <>
       {user && (
-        <div className="">
-          <button className="btn btn-secondary" onClick={logout}>
-            Log Out
-          </button>
-          <div className="container text-center">
-            <div className="card-body">
-              <h1 className="card-title ">{`Welcome ${user.name}`}</h1>
-              <p className="card-text"></p>
-              <ul className="list-group">{listLinks}</ul>
-            </div>
+        <div
+          className="container text-center card mt-5"
+          style={{ maxWidth: "40rem" }}
+        >
+          <div className="card-body">
+            <h1 className="card-title ">{`Welcome ${user.name}`}</h1>
+            <button className="btn btn-secondary btn-sm" onClick={logout}>
+              Log Out
+            </button>
+            <p className="card-text"></p>
+            <ul className="list-group">{listLinks}</ul>
+
             {newLinkError && (
               <div className="alert border border-danger alert-danger my-2">
                 Error: {newLinkError}
               </div>
             )}
-            <form style={{ maxWidth: "18rem" }} onSubmit={handleSubmit}>
-              <div className="input-group mb-3">
+            <form className="row p-4" onSubmit={handleSubmit}>
+              <div className="input-group col col-12 col-md my-1">
                 <span className="input-group-text">title</span>
                 <input
                   onChange={(event) => {
@@ -153,10 +155,11 @@ export default function Dashboard() {
                   type="text"
                   className="form-control"
                   aria-label="title"
+                  value={newLinkTitle}
                 />
               </div>
 
-              <div className="input-group mb-3">
+              <div className="input-group col col-12 col-md my-1">
                 <span className="input-group-text">hyperlink</span>
                 <input
                   onChange={(event) => {
@@ -165,11 +168,14 @@ export default function Dashboard() {
                   type="text"
                   className="form-control"
                   aria-label="hyperlink"
+                  value={newLinkHyperlink}
                 />
               </div>
-              <button className="btn btn-primary" type="submit">
-                Add new link
-              </button>
+              <div className="align-self-center my-1 mx-3">
+                <button className=" btn btn-primary btn-sm" type="submit">
+                  Add new link
+                </button>
+              </div>
             </form>
           </div>
         </div>
