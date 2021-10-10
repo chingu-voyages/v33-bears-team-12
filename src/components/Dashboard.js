@@ -98,6 +98,8 @@ export default function Dashboard() {
       });
       setNewLinkError(null);
       getUser();
+      setNewLinkTitle("");
+      setNewLinkHyperlink("");
     } catch (err) {
       console.log(err.response.data.error);
       setNewLinkError(err.response.data.error);
